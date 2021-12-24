@@ -11,10 +11,11 @@
     
     <script>
         // get query url and decode uri with url
-        const url = decodeURIComponent(window.location.search.substring(1).split("="));
+        const getURL = window.location.search.substring(1).split("=");
         // redirect to url
-        if(url[0] && url[0] === "url" && url[1]) {
-            window.location.href = `${url[1]}`;
+        if(getURL[0] && getURL[0] === "url" && getURL[1]) {
+            const parseURL = decodeURIComponent(getURL[1])
+            window.location.href = `${parseURL}`;
         }
     </script>
 </body>
